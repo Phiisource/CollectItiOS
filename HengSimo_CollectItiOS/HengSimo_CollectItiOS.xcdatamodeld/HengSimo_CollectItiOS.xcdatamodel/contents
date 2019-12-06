@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Lot" representedClassName="Lot" syncable="YES" codeGenerationType="class">
+        <attribute name="cout" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="datevalidite" optional="YES" attributeType="Date" defaultDateTimeInterval="915217200" usesScalarValueType="NO"/>
+        <attribute name="descriptionlot" optional="YES" attributeType="String" defaultValueString=""/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="emailaddress" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="isAdmin" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="prenom" optional="YES" attributeType="String" defaultValueString=""/>
+        <relationship name="achat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lot"/>
+    </entity>
+    <elements>
+        <element name="Lot" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="User" positionX="-54" positionY="9" width="128" height="103"/>
+    </elements>
 </model>
