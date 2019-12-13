@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D483F7A239F878C00A16484 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D483F79239F878C00A16484 /* LogInViewController.swift */; };
+		6D483F7C239F9CBE00A16484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D483F7B239F9CBE00A16484 /* SignUpViewController.swift */; };
 		6D706EF0239932490087875C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706EEF239932490087875C /* AppDelegate.swift */; };
 		6D706EF2239932490087875C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706EF1239932490087875C /* SceneDelegate.swift */; };
 		6D706EF4239932490087875C /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706EF3239932490087875C /* AccueilViewController.swift */; };
@@ -21,9 +23,17 @@
 		6D706F15239968EA0087875C /* AjouterLotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706F14239968EA0087875C /* AjouterLotViewController.swift */; };
 		6D706F1723998B390087875C /* LotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706F1623998B390087875C /* LotTableViewCell.swift */; };
 		6D706F1923998B690087875C /* HistoriqueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D706F1823998B690087875C /* HistoriqueTableViewCell.swift */; };
+		6DB82BC923A1593400B47EB7 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB82BC823A1593400B47EB7 /* Authentification.storyboard */; };
+		6DB82BCB23A159FB00B47EB7 /* ContentTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */; };
+		6DB82BD423A2818200B47EB7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB82BD323A2818200B47EB7 /* AccountViewController.swift */; };
+		6DD502CB239F7E1B00C35FCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD502CA239F7E1B00C35FCC /* GoogleService-Info.plist */; };
+		B501874827911CC7EED9B0DD /* Pods_HengSimo_CollectItiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D4D80389EF91B757EE77EE /* Pods_HengSimo_CollectItiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36B1D843B08F5369FAD8DE63 /* Pods-HengSimo_CollectItiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HengSimo_CollectItiOS.debug.xcconfig"; path = "Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6D483F79239F878C00A16484 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		6D483F7B239F9CBE00A16484 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6D706EEC239932490087875C /* HengSimo_CollectItiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HengSimo_CollectItiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D706EEF239932490087875C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D706EF1239932490087875C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +50,12 @@
 		6D706F14239968EA0087875C /* AjouterLotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjouterLotViewController.swift; sourceTree = "<group>"; };
 		6D706F1623998B390087875C /* LotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotTableViewCell.swift; sourceTree = "<group>"; };
 		6D706F1823998B690087875C /* HistoriqueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriqueTableViewCell.swift; sourceTree = "<group>"; };
+		6DB82BC823A1593400B47EB7 /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
+		6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabBarViewController.swift; sourceTree = "<group>"; };
+		6DB82BD323A2818200B47EB7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		6DD502CA239F7E1B00C35FCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ADA6CA3B2768ABABBFA9219E /* Pods-HengSimo_CollectItiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HengSimo_CollectItiOS.release.xcconfig"; path = "Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS.release.xcconfig"; sourceTree = "<group>"; };
+		D6D4D80389EF91B757EE77EE /* Pods_HengSimo_CollectItiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengSimo_CollectItiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +63,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B501874827911CC7EED9B0DD /* Pods_HengSimo_CollectItiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F46F029ADD021AAD8B62371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6D4D80389EF91B757EE77EE /* Pods_HengSimo_CollectItiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D483F7D239FA78D00A16484 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6D706EF7239932490087875C /* Main.storyboard */,
+				6D706EFF2399324A0087875C /* LaunchScreen.storyboard */,
+				6DB82BC823A1593400B47EB7 /* Authentification.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		6D706EE3239932490087875C = {
 			isa = PBXGroup;
 			children = (
 				6D706EEE239932490087875C /* HengSimo_CollectItiOS */,
 				6D706EED239932490087875C /* Products */,
+				BA6D9EF711C8EA413F989476 /* Pods */,
+				2F46F029ADD021AAD8B62371 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,11 +113,11 @@
 				6D706EEF239932490087875C /* AppDelegate.swift */,
 				6D706EF1239932490087875C /* SceneDelegate.swift */,
 				6D706F0B239964DE0087875C /* View Controllers */,
-				6D706EF7239932490087875C /* Main.storyboard */,
+				6D483F7D239FA78D00A16484 /* Storyboards */,
 				6D706EFD2399324A0087875C /* Assets.xcassets */,
-				6D706EFF2399324A0087875C /* LaunchScreen.storyboard */,
 				6D706F022399324A0087875C /* Info.plist */,
 				6D706EFA239932490087875C /* HengSimo_CollectItiOS.xcdatamodeld */,
+				6DD502CA239F7E1B00C35FCC /* GoogleService-Info.plist */,
 			);
 			path = HengSimo_CollectItiOS;
 			sourceTree = "<group>";
@@ -98,13 +135,34 @@
 		6D706F0B239964DE0087875C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6DB82BCC23A15FA200B47EB7 /* Auth Controllers */,
 				6D706EF3239932490087875C /* AccueilViewController.swift */,
 				6D706EF5239932490087875C /* MethodesEcoViewController.swift */,
 				6D706F10239968AD0087875C /* LotsTableViewController.swift */,
 				6D706F12239968BA0087875C /* HistoriqueTableViewController.swift */,
 				6D706F14239968EA0087875C /* AjouterLotViewController.swift */,
+				6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */,
+				6DB82BD323A2818200B47EB7 /* AccountViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6DB82BCC23A15FA200B47EB7 /* Auth Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D483F79239F878C00A16484 /* LogInViewController.swift */,
+				6D483F7B239F9CBE00A16484 /* SignUpViewController.swift */,
+			);
+			path = "Auth Controllers";
+			sourceTree = "<group>";
+		};
+		BA6D9EF711C8EA413F989476 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36B1D843B08F5369FAD8DE63 /* Pods-HengSimo_CollectItiOS.debug.xcconfig */,
+				ADA6CA3B2768ABABBFA9219E /* Pods-HengSimo_CollectItiOS.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D706F052399324A0087875C /* Build configuration list for PBXNativeTarget "HengSimo_CollectItiOS" */;
 			buildPhases = (
+				BD0C60BB995D1793B963C172 /* [CP] Check Pods Manifest.lock */,
 				6D706EE8239932490087875C /* Sources */,
 				6D706EE9239932490087875C /* Frameworks */,
 				6D706EEA239932490087875C /* Resources */,
+				00E45F9777ABEE471D7FF3D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,12 +226,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D706F012399324A0087875C /* LaunchScreen.storyboard in Resources */,
+				6DB82BC923A1593400B47EB7 /* Authentification.storyboard in Resources */,
+				6DD502CB239F7E1B00C35FCC /* GoogleService-Info.plist in Resources */,
 				6D706EFE2399324A0087875C /* Assets.xcassets in Resources */,
 				6D706EF9239932490087875C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E45F9777ABEE471D7FF3D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD0C60BB995D1793B963C172 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HengSimo_CollectItiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D706EE8239932490087875C /* Sources */ = {
@@ -184,10 +288,14 @@
 				6D706F092399325A0087875C /* RoundButton.swift in Sources */,
 				6D706EF4239932490087875C /* AccueilViewController.swift in Sources */,
 				6D706F1723998B390087875C /* LotTableViewCell.swift in Sources */,
+				6DB82BCB23A159FB00B47EB7 /* ContentTabBarViewController.swift in Sources */,
 				6D706EF0239932490087875C /* AppDelegate.swift in Sources */,
 				6D706EF2239932490087875C /* SceneDelegate.swift in Sources */,
+				6D483F7A239F878C00A16484 /* LogInViewController.swift in Sources */,
 				6D706EFC239932490087875C /* HengSimo_CollectItiOS.xcdatamodeld in Sources */,
+				6DB82BD423A2818200B47EB7 /* AccountViewController.swift in Sources */,
 				6D706F15239968EA0087875C /* AjouterLotViewController.swift in Sources */,
+				6D483F7C239F9CBE00A16484 /* SignUpViewController.swift in Sources */,
 				6D706F1923998B690087875C /* HistoriqueTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +438,7 @@
 		};
 		6D706F062399324A0087875C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B1D843B08F5369FAD8DE63 /* Pods-HengSimo_CollectItiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -350,6 +459,7 @@
 		};
 		6D706F072399324A0087875C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADA6CA3B2768ABABBFA9219E /* Pods-HengSimo_CollectItiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";

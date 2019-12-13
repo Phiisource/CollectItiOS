@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AccueilViewController: UIViewController {
 
+    @IBOutlet weak var username_label: UILabel!
+    @IBOutlet weak var pointsnb_label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let user = Auth.auth().currentUser {
+            
+            username_label.text = user.email
+            
+        }  else {
+            
+            print("msg from Accueil : aucun utilisateur connecté")
+            
+        }
     }
-
 
 }
 
