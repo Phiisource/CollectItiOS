@@ -27,6 +27,13 @@
 		6DB82BCB23A159FB00B47EB7 /* ContentTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */; };
 		6DB82BD423A2818200B47EB7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB82BD323A2818200B47EB7 /* AccountViewController.swift */; };
 		6DD502CB239F7E1B00C35FCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD502CA239F7E1B00C35FCC /* GoogleService-Info.plist */; };
+		6DEDB67923A7FB4D00967CED /* BackOffice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DEDB67823A7FB4D00967CED /* BackOffice.storyboard */; };
+		6DEDB67D23A8C96900967CED /* BOLotsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB67C23A8C96900967CED /* BOLotsTableViewController.swift */; };
+		6DEDB67F23A8C97D00967CED /* BOUserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB67E23A8C97D00967CED /* BOUserListTableViewController.swift */; };
+		6DEDB68423A8CC0400967CED /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB68323A8CC0400967CED /* UserTableViewCell.swift */; };
+		6DEDB68623A8D1C700967CED /* BOLotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB68523A8D1C700967CED /* BOLotTableViewCell.swift */; };
+		6DEDB68823A8E3B900967CED /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB68723A8E3B900967CED /* UserProfileViewController.swift */; };
+		6DEDB68A23A8E40800967CED /* ModifierLotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDB68923A8E40800967CED /* ModifierLotViewController.swift */; };
 		B501874827911CC7EED9B0DD /* Pods_HengSimo_CollectItiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D4D80389EF91B757EE77EE /* Pods_HengSimo_CollectItiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +61,13 @@
 		6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabBarViewController.swift; sourceTree = "<group>"; };
 		6DB82BD323A2818200B47EB7 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6DD502CA239F7E1B00C35FCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DEDB67823A7FB4D00967CED /* BackOffice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BackOffice.storyboard; sourceTree = "<group>"; };
+		6DEDB67C23A8C96900967CED /* BOLotsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOLotsTableViewController.swift; sourceTree = "<group>"; };
+		6DEDB67E23A8C97D00967CED /* BOUserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOUserListTableViewController.swift; sourceTree = "<group>"; };
+		6DEDB68323A8CC0400967CED /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		6DEDB68523A8D1C700967CED /* BOLotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOLotTableViewCell.swift; sourceTree = "<group>"; };
+		6DEDB68723A8E3B900967CED /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		6DEDB68923A8E40800967CED /* ModifierLotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierLotViewController.swift; sourceTree = "<group>"; };
 		ADA6CA3B2768ABABBFA9219E /* Pods-HengSimo_CollectItiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HengSimo_CollectItiOS.release.xcconfig"; path = "Target Support Files/Pods-HengSimo_CollectItiOS/Pods-HengSimo_CollectItiOS.release.xcconfig"; sourceTree = "<group>"; };
 		D6D4D80389EF91B757EE77EE /* Pods_HengSimo_CollectItiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengSimo_CollectItiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +98,7 @@
 				6D706EF7239932490087875C /* Main.storyboard */,
 				6D706EFF2399324A0087875C /* LaunchScreen.storyboard */,
 				6DB82BC823A1593400B47EB7 /* Authentification.storyboard */,
+				6DEDB67823A7FB4D00967CED /* BackOffice.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -128,6 +143,8 @@
 				6D706F082399325A0087875C /* RoundButton.swift */,
 				6D706F1623998B390087875C /* LotTableViewCell.swift */,
 				6D706F1823998B690087875C /* HistoriqueTableViewCell.swift */,
+				6DEDB68323A8CC0400967CED /* UserTableViewCell.swift */,
+				6DEDB68523A8D1C700967CED /* BOLotTableViewCell.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -136,13 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				6DB82BCC23A15FA200B47EB7 /* Auth Controllers */,
-				6D706EF3239932490087875C /* AccueilViewController.swift */,
-				6D706EF5239932490087875C /* MethodesEcoViewController.swift */,
-				6D706F10239968AD0087875C /* LotsTableViewController.swift */,
-				6D706F12239968BA0087875C /* HistoriqueTableViewController.swift */,
-				6D706F14239968EA0087875C /* AjouterLotViewController.swift */,
-				6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */,
-				6DB82BD323A2818200B47EB7 /* AccountViewController.swift */,
+				6DEDB67A23A7FFE300967CED /* Main Content Controllers */,
+				6DEDB67B23A8000600967CED /* Back Office Controllers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -154,6 +166,31 @@
 				6D483F7B239F9CBE00A16484 /* SignUpViewController.swift */,
 			);
 			path = "Auth Controllers";
+			sourceTree = "<group>";
+		};
+		6DEDB67A23A7FFE300967CED /* Main Content Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D706EF3239932490087875C /* AccueilViewController.swift */,
+				6D706EF5239932490087875C /* MethodesEcoViewController.swift */,
+				6D706F10239968AD0087875C /* LotsTableViewController.swift */,
+				6D706F12239968BA0087875C /* HistoriqueTableViewController.swift */,
+				6DB82BCA23A159FB00B47EB7 /* ContentTabBarViewController.swift */,
+				6DB82BD323A2818200B47EB7 /* AccountViewController.swift */,
+			);
+			path = "Main Content Controllers";
+			sourceTree = "<group>";
+		};
+		6DEDB67B23A8000600967CED /* Back Office Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D706F14239968EA0087875C /* AjouterLotViewController.swift */,
+				6DEDB67C23A8C96900967CED /* BOLotsTableViewController.swift */,
+				6DEDB67E23A8C97D00967CED /* BOUserListTableViewController.swift */,
+				6DEDB68723A8E3B900967CED /* UserProfileViewController.swift */,
+				6DEDB68923A8E40800967CED /* ModifierLotViewController.swift */,
+			);
+			path = "Back Office Controllers";
 			sourceTree = "<group>";
 		};
 		BA6D9EF711C8EA413F989476 /* Pods */ = {
@@ -226,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D706F012399324A0087875C /* LaunchScreen.storyboard in Resources */,
+				6DEDB67923A7FB4D00967CED /* BackOffice.storyboard in Resources */,
 				6DB82BC923A1593400B47EB7 /* Authentification.storyboard in Resources */,
 				6DD502CB239F7E1B00C35FCC /* GoogleService-Info.plist in Resources */,
 				6D706EFE2399324A0087875C /* Assets.xcassets in Resources */,
@@ -283,15 +321,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D706EF6239932490087875C /* MethodesEcoViewController.swift in Sources */,
+				6DEDB68823A8E3B900967CED /* UserProfileViewController.swift in Sources */,
 				6D706F11239968AD0087875C /* LotsTableViewController.swift in Sources */,
 				6D706F13239968BA0087875C /* HistoriqueTableViewController.swift in Sources */,
 				6D706F092399325A0087875C /* RoundButton.swift in Sources */,
+				6DEDB67D23A8C96900967CED /* BOLotsTableViewController.swift in Sources */,
 				6D706EF4239932490087875C /* AccueilViewController.swift in Sources */,
 				6D706F1723998B390087875C /* LotTableViewCell.swift in Sources */,
 				6DB82BCB23A159FB00B47EB7 /* ContentTabBarViewController.swift in Sources */,
+				6DEDB68A23A8E40800967CED /* ModifierLotViewController.swift in Sources */,
+				6DEDB68623A8D1C700967CED /* BOLotTableViewCell.swift in Sources */,
 				6D706EF0239932490087875C /* AppDelegate.swift in Sources */,
 				6D706EF2239932490087875C /* SceneDelegate.swift in Sources */,
+				6DEDB68423A8CC0400967CED /* UserTableViewCell.swift in Sources */,
 				6D483F7A239F878C00A16484 /* LogInViewController.swift in Sources */,
+				6DEDB67F23A8C97D00967CED /* BOUserListTableViewController.swift in Sources */,
 				6D706EFC239932490087875C /* HengSimo_CollectItiOS.xcdatamodeld in Sources */,
 				6DB82BD423A2818200B47EB7 /* AccountViewController.swift in Sources */,
 				6D706F15239968EA0087875C /* AjouterLotViewController.swift in Sources */,

@@ -19,27 +19,43 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // Action quand le bouton Connexion est cliqué
     @IBAction func sendConnexion_Button(_ sender: UIButton) {
+        
+        // Vérifier si les champs adresse email et mot de passe sont saisis
         if emailaddress_textfield.text != "" && password_textfield.text != "" {
             
+            // Connecter un utilisateur avec FireBase
             Auth.auth().signIn(withEmail: emailaddress_textfield.text!, password: password_textfield.text!) {
                 (authResult, error) in
                 if error != nil {
                     
-                    print (error.debugDescription)
+                    // S'il y a une erreur, print l'erreur
+                    print(error.debugDescription)
+
+                    // Et afficher une popup d'erreur
+                    let alertController = UIAlertController(title: "Alerte", message:
+                        "L'adresse email ou le mot de passe n'est pas valide", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                    
+                    self.present(alertController, animated: true, completion: nil)
                     
                 } else {
-    
-                    print ("connexion de \(String(describing: self.emailaddress_textfield.text!))")
                     
-                    self.performSegue(withIdentifier: "goToContent", sender: self)
+                    // S'il n'y a pas d'erreur, afficher le storyboard du contenu de l'app
+                    self.dismiss(animated: true, completion: nil)
                     
                 }
             }
             
         } else {
             
-            print ("un des champs n'est pas rempli")
+            // Sinon, afficher une popup d'erreur sur le contenu saisi lors de la connexion
+            let alertController = UIAlertController(title: "Alerte", message:
+                "Veuillez remplir les champs email et mot de passe", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
             
         }
     }
