@@ -148,9 +148,9 @@ class UserProfileViewController: UIViewController {
     }
     
     @IBAction func sendDeleteUser(_ sender: RoundButton) {
-        dismiss(animated: true, completion: nil)
+        /*dismiss(animated: true, completion: nil)
         
-        /*let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")

@@ -207,10 +207,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6Sz-6m-cny">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGi-R7-54v">
                                     <rect key="frame" x="267" y="83" width="127" height="22"/>
                                     <state key="normal" title="Ajouter un lot" image="plus" catalog="system">
@@ -223,24 +219,21 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="6Sz-6m-cny" firstAttribute="top" secondItem="YpA-uw-LGJ" secondAttribute="top" id="6eL-iE-sij"/>
                                 <constraint firstAttribute="trailing" secondItem="eGi-R7-54v" secondAttribute="trailing" constant="20" id="lmZ-Wy-Ms1"/>
-                                <constraint firstAttribute="trailing" secondItem="6Sz-6m-cny" secondAttribute="trailing" id="sSm-Bo-DK6"/>
                                 <constraint firstAttribute="bottom" secondItem="eGi-R7-54v" secondAttribute="bottom" id="xEM-zr-v0m"/>
-                                <constraint firstItem="6Sz-6m-cny" firstAttribute="leading" secondItem="YpA-uw-LGJ" secondAttribute="leading" id="yQv-Yp-wV5"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="E1a-Eb-bbM">
-                            <rect key="frame" x="0.0" y="312" width="414" height="5"/>
+                            <rect key="frame" x="0.0" y="312.5" width="414" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lotCellBO" id="a73-HC-6cG" customClass="BOLotTableViewCell" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="133" width="414" height="151"/>
+                                <rect key="frame" x="0.0" y="133" width="414" height="151.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a73-HC-6cG" id="6Ku-EV-ABt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="151.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Intitulé du lot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQg-Vi-BVt">
@@ -250,13 +243,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Valable jusqu'au XX/XX/XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDi-f1-6oK">
-                                            <rect key="frame" x="20" y="104" width="228" height="21"/>
+                                            <rect key="frame" x="20" y="104.5" width="228" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyd-PW-sjS" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
-                                            <rect key="frame" x="268" y="95" width="126" height="30"/>
+                                            <rect key="frame" x="268" y="95.5" width="126" height="30"/>
                                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Modifier"/>
                                             <userDefinedRuntimeAttributes>
@@ -269,7 +262,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coût : XX points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQC-qk-b13">
-                                            <rect key="frame" x="20" y="65" width="125" height="21"/>
+                                            <rect key="frame" x="20" y="65" width="125" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -527,7 +520,7 @@
                                     <action selector="donnerpoints_button:" destination="dVu-hV-kIZ" eventType="touchUpInside" id="zfx-9V-Uhq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-nE-SMa" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-nE-SMa" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
                                 <rect key="frame" x="20" y="600" width="374" height="45"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

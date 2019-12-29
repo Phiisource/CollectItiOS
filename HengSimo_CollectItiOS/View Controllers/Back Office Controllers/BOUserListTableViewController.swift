@@ -11,8 +11,6 @@ import CoreData
 
 class BOUserListTableViewController: UITableViewController, UISearchResultsUpdating {
     
-    @IBOutlet weak var searchUserBar: UISearchBar!
-    
     var users = [User]()
     var selectedUser: User?
     var filteredUsers = [User]()
@@ -26,7 +24,7 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
         resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
-            controller.searchBar.placeholder = "Recherche par email"
+            controller.searchBar.placeholder = "Rechercher par email"
             controller.obscuresBackgroundDuringPresentation = false
             definesPresentationContext = true
             tableView.tableHeaderView?.addSubview(controller.searchBar)
@@ -72,21 +70,15 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
             fatalError("Unexpected Index Path")
         }
         
+        // Attribuer un user à la cellule et gestion de la recherche et des résultats affichés
         if (resultSearchController.isActive) {
             cell.user = filteredUsers[indexPath.row]
-
             return cell
         }
         else {
             cell.user = users[indexPath.row]
             return cell
         }
-        
-        //let user = users[indexPath.row]
-        
-        // Attribuer à la cellule un utilisateur
-        //cell.user = user
-        //return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
-class BOLotsTableViewController: UITableViewController {
+class BOLotsTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var lots = [Lot]()
+    var filteredLots = [Lot]()
+    var resultSearchController = UISearchController()
     
     @IBOutlet var lots_tableview: UITableView!
     
@@ -19,6 +21,17 @@ class BOLotsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         fetchLots()
+        
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.searchBar.placeholder = "Rechercher un lot"
+            controller.obscuresBackgroundDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView?.addSubview(controller.searchBar)
+
+            return controller
+        })()
     }
     
     fileprivate func fetchLots() {
@@ -44,7 +57,11 @@ class BOLotsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lots.count
+        if (resultSearchController.isActive) {
+            return filteredLots.count
+        } else {
+            return lots.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,11 +71,15 @@ class BOLotsTableViewController: UITableViewController {
             fatalError("Unexpected Index Path")
         }
         
-        let lot = lots[indexPath.row]
 
-        // Attribuer un lot à la cellule
-        cell.lot = lot
-        return cell
+        // Attribuer un lot à la cellule et gestion de la recherche et des résultats affichés
+        if (resultSearchController.isActive) {
+            cell.lot = filteredLots[indexPath.row]
+            return cell
+        } else {
+            cell.lot = lots[indexPath.row]
+            return cell
+        }
     }
     
     // Rafraîchir les données de la liste des lots à chaque affichage
@@ -71,5 +92,15 @@ class BOLotsTableViewController: UITableViewController {
 
     @IBAction func switchBackToApp(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredLots.removeAll(keepingCapacity: false)
+        
+        let searchPredicate = NSPredicate(format: "descriptionlot CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (lots as NSArray).filtered(using: searchPredicate)
+        filteredLots = array as! [Lot]
+
+        self.tableView.reloadData()
     }
 }
