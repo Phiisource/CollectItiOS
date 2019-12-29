@@ -71,34 +71,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="CjW-q7-c6U">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="O5l-DC-3ym">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                    <connections>
-                                        <outlet property="delegate" destination="1OW-YM-LzL" id="3e9-FT-fR8"/>
-                                    </connections>
-                                </searchBar>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilisateur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oc-Ml-VIE">
-                                    <rect key="frame" x="30" y="100.5" width="82.5" height="20.5"/>
+                                    <rect key="frame" x="30" y="80.5" width="82.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date d'inscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBd-Jk-00D">
-                                    <rect key="frame" x="243" y="100.5" width="141" height="20.5"/>
+                                    <rect key="frame" x="243" y="80.5" width="141" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QG4-ie-Abm">
-                                    <rect key="frame" x="20" y="126" width="374" height="1"/>
+                                    <rect key="frame" x="20" y="106" width="374" height="1"/>
                                     <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="ouH-dg-4VH"/>
@@ -107,29 +96,24 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="O5l-DC-3ym" firstAttribute="top" secondItem="CjW-q7-c6U" secondAttribute="top" id="3bJ-Jw-Hc0"/>
                                 <constraint firstItem="QG4-ie-Abm" firstAttribute="top" secondItem="tBd-Jk-00D" secondAttribute="bottom" constant="5" id="82H-qD-ryM"/>
-                                <constraint firstItem="tBd-Jk-00D" firstAttribute="top" secondItem="O5l-DC-3ym" secondAttribute="bottom" constant="30" id="EpN-K3-Ade"/>
                                 <constraint firstItem="8oc-Ml-VIE" firstAttribute="leading" secondItem="CjW-q7-c6U" secondAttribute="leading" constant="30" id="FDl-SP-PzV"/>
-                                <constraint firstItem="8oc-Ml-VIE" firstAttribute="top" secondItem="O5l-DC-3ym" secondAttribute="bottom" constant="30" id="Tdx-OY-8HX"/>
                                 <constraint firstAttribute="trailing" secondItem="tBd-Jk-00D" secondAttribute="trailing" constant="30" id="WaL-pi-RyR"/>
                                 <constraint firstAttribute="trailing" secondItem="QG4-ie-Abm" secondAttribute="trailing" constant="20" id="d3h-Rb-svt"/>
-                                <constraint firstItem="O5l-DC-3ym" firstAttribute="leading" secondItem="CjW-q7-c6U" secondAttribute="leading" id="dJP-IE-TKE"/>
                                 <constraint firstItem="QG4-ie-Abm" firstAttribute="centerX" secondItem="CjW-q7-c6U" secondAttribute="centerX" id="ldx-ck-AcJ"/>
                                 <constraint firstItem="QG4-ie-Abm" firstAttribute="leading" secondItem="CjW-q7-c6U" secondAttribute="leading" constant="20" id="sId-Iu-CqF"/>
-                                <constraint firstAttribute="trailing" secondItem="O5l-DC-3ym" secondAttribute="trailing" id="tnc-38-A2Y"/>
                                 <constraint firstItem="QG4-ie-Abm" firstAttribute="top" secondItem="8oc-Ml-VIE" secondAttribute="bottom" constant="5" id="vbd-HX-l0l"/>
                                 <constraint firstAttribute="bottom" secondItem="QG4-ie-Abm" secondAttribute="bottom" id="yH8-xr-fhL"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="C6P-P8-Dbf">
-                            <rect key="frame" x="0.0" y="316" width="414" height="5"/>
+                            <rect key="frame" x="0.0" y="296" width="414" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="userCell" rowHeight="133" id="XHI-AB-qKz" customClass="UserTableViewCell" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155" width="414" height="133"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XHI-AB-qKz" id="itb-XO-06c">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="133"/>
@@ -204,7 +188,6 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="searchUserBar" destination="O5l-DC-3ym" id="R0B-Nt-9m7"/>
                         <segue destination="dVu-hV-kIZ" kind="show" identifier="showUserProfileBO" id="KZy-CM-EXG"/>
                     </connections>
                 </tableViewController>
@@ -248,16 +231,16 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="E1a-Eb-bbM">
-                            <rect key="frame" x="0.0" y="312.5" width="414" height="5"/>
+                            <rect key="frame" x="0.0" y="312" width="414" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lotCellBO" id="a73-HC-6cG" customClass="BOLotTableViewCell" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="133" width="414" height="151.5"/>
+                                <rect key="frame" x="0.0" y="133" width="414" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a73-HC-6cG" id="6Ku-EV-ABt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="151.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Intitulé du lot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQg-Vi-BVt">
@@ -267,13 +250,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Valable jusqu'au XX/XX/XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDi-f1-6oK">
-                                            <rect key="frame" x="20" y="104.5" width="228" height="21"/>
+                                            <rect key="frame" x="20" y="104" width="228" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyd-PW-sjS" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
-                                            <rect key="frame" x="268" y="95.5" width="126" height="30"/>
+                                            <rect key="frame" x="268" y="95" width="126" height="30"/>
                                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Modifier"/>
                                             <userDefinedRuntimeAttributes>
@@ -286,7 +269,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coût : XX points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQC-qk-b13">
-                                            <rect key="frame" x="20" y="65" width="125" height="21.5"/>
+                                            <rect key="frame" x="20" y="65" width="125" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

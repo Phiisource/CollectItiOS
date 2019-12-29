@@ -16,11 +16,23 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
     var users = [User]()
     var selectedUser: User?
     var filteredUsers = [User]()
+    var resultSearchController = UISearchController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchUsers()
+        
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.searchBar.placeholder = "Recherche par email"
+            controller.obscuresBackgroundDuringPresentation = false
+            definesPresentationContext = true
+            tableView.tableHeaderView?.addSubview(controller.searchBar)
+
+            return controller
+        })()
     }
 
     
@@ -47,7 +59,11 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        if  (resultSearchController.isActive) {
+            return filteredUsers.count
+        } else {
+            return users.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,11 +72,21 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
             fatalError("Unexpected Index Path")
         }
         
-        let user = users[indexPath.row]
+        if (resultSearchController.isActive) {
+            cell.user = filteredUsers[indexPath.row]
+
+            return cell
+        }
+        else {
+            cell.user = users[indexPath.row]
+            return cell
+        }
+        
+        //let user = users[indexPath.row]
         
         // Attribuer à la cellule un utilisateur
-        cell.user = user
-        return cell
+        //cell.user = user
+        //return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -98,9 +124,9 @@ class BOUserListTableViewController: UITableViewController, UISearchResultsUpdat
     func updateSearchResults(for searchController: UISearchController) {
         filteredUsers.removeAll(keepingCapacity: false)
         
-        /*let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (users as User).filtered(using: searchPredicate)
-        filteredUsers = array as! [User]*/
+        let searchPredicate = NSPredicate(format: "userid CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (users as NSArray).filtered(using: searchPredicate)
+        filteredUsers = array as! [User]
 
         self.tableView.reloadData()
     }
