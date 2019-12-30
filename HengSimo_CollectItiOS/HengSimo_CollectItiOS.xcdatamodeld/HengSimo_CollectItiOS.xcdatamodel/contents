@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Lot" representedClassName="Lot" syncable="YES" codeGenerationType="class">
-        <attribute name="cout" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cout" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="datevalidite" attributeType="Date" defaultDateTimeInterval="915217200" usesScalarValueType="NO"/>
         <attribute name="descriptionlot" attributeType="String" defaultValueString=""/>
     </entity>

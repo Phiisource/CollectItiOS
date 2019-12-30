@@ -21,16 +21,17 @@ class AjouterLotViewController: UIViewController, UITextFieldDelegate {
     
     // Fonction d'ajout d'un lot quand le bouton ajouter est cliqué
     @IBAction func sendAjouterLotButton(_ sender: RoundButton) {
+        let coutSaisi = Int(coutlot_label.text!)!
         
         // Vérifier si les champs sont remplis
-        if intitulelot_label.text != "" && coutlot_label.text != "" {
+        if intitulelot_label.text != "" && coutlot_label.text != "" && coutSaisi > 0 {
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
             let newLot = NSEntityDescription.insertNewObject(forEntityName: "Lot", into: context)
             newLot.setValue(intitulelot_label.text, forKey: "descriptionlot")
-            newLot.setValue(Int(coutlot_label.text!), forKey: "cout")
+            newLot.setValue(Int64(coutlot_label.text!), forKey: "cout")
             newLot.setValue(datelot_picker.date, forKey: "datevalidite")
             
             do {
@@ -59,7 +60,7 @@ class AjouterLotViewController: UIViewController, UITextFieldDelegate {
             
             // Sinon, si un des champs est vide, afficher un message de complétion des champs
             let alertController = UIAlertController(title: "Alerte", message:
-                "Veuillez remplir tous les champs", preferredStyle: .alert)
+                "Un des champs n'est pas valide", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
             
             self.present(alertController, animated: true, completion: nil)

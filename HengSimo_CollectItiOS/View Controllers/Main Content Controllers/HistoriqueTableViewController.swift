@@ -45,7 +45,7 @@ class HistoriqueTableViewController: UITableViewController {
                 }
             } catch {
                 
-                fatalError("Problème fetch user CoreData (AccueilVC)")
+                fatalError("Problème fetch user CoreData (HistoriqueVC)")
                 
             }
             

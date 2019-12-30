@@ -64,7 +64,7 @@ class AccountViewController: UIViewController {
                 
             } catch {
                 
-                fatalError("Problème fetch user CoreData (AccueilVC)")
+                fatalError("Problème fetch user CoreData (AccountVC)")
                 
             }
             

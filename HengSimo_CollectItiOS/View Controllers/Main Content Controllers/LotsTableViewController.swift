@@ -12,6 +12,7 @@ import CoreData
 
 class LotsTableViewController: UITableViewController {
     
+    var currentUser = User()
     var lots = [Lot]()
     
     @IBOutlet var lots_tableview: UITableView!
@@ -43,9 +44,9 @@ class LotsTableViewController: UITableViewController {
                 if let results = try context.fetch(request) as? [User] {
                     
                     // Récupérer le user du CoreData User
-                    let currentuser = results[0]
+                    currentUser = results[0]
                     
-                    if currentuser.isAdmin {
+                    if currentUser.isAdmin {
                         
                         switchBO_button.isHidden = false
                         
@@ -53,7 +54,7 @@ class LotsTableViewController: UITableViewController {
                 }
             } catch {
                 
-                fatalError("Problème fetch user CoreData (AccueilVC)")
+                fatalError("Problème fetch user CoreData (LotsTableView)")
                 
             }
         }
@@ -98,6 +99,67 @@ class LotsTableViewController: UITableViewController {
     // Rafraîchir les données de la liste des lots à chaque affichage
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchLots()
         tableView.reloadData()
+    }
+    
+    @IBAction func sendObtenirLot_button(_ sender: RoundButton) {
+        let cell = sender.superview?.superview as! UITableViewCell
+        let tbl = cell.superview as! UITableView
+        let indexPath = tbl.indexPath(for: cell)
+        let selectedLot = lots[indexPath!.row] as Lot
+        
+        let alert = UIAlertController(title: "Confirmer l'achat de ce lot (\(String(selectedLot.cout)) points) ?", message: selectedLot.descriptionlot, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Oui", comment: "Default action"), style: .default, handler: { (action) in
+            self.buyLot(lot: selectedLot)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Annuler", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"Cancel\" alert occured.")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func buyLot(lot: Lot) {
+        if currentUser.nbpoints >= lot.cout {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            
+            request.returnsObjectsAsFaults = false
+            
+            // Filtrer les données du CoreData User selon le userid, l'email utilisé dans firebase
+            request.predicate = NSPredicate(format: "userid == %@", currentUser.userid!)
+            
+            do {
+                if let results = try context.fetch(request) as? [User] {
+                    let managedObject = results[0]
+                    
+                    managedObject.setValue(managedObject.nbpoints - lot.cout, forKey: "nbpoints")
+                    try context.save()
+                    
+                    displayAlertController(alertTitle: "Succès", alertMessage: "Le lot a bien été obtenu, votre solde de point est actuellement de \(String(currentUser.nbpoints))", actionTitle: "OK")
+                }
+            } catch {
+                
+                fatalError("Problème fetch user CoreData (LotsTableView)")
+                
+            }
+        } else {
+            displayAlertController(alertTitle: "Requête impossible", alertMessage: "Vous ne disposez pas de suffisamment de point pour obtenir ce lot", actionTitle: "OK")
+        }
+    }
+    
+    fileprivate func displayAlertController(alertTitle:String, alertMessage:String, actionTitle:String) {
+        
+        let alertController = UIAlertController(title: alertTitle, message:
+            alertMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: actionTitle, style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 }

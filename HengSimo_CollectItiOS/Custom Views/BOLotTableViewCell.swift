@@ -16,7 +16,7 @@ class BOLotTableViewCell: UITableViewCell {
         didSet {
             guard let lot = lot else { return }
             descriptionlot_label.text = lot.descriptionlot
-            coutlot_label.text = String(lot.cout)
+            coutlot_label.text = "Coût : \(String(lot.cout)) points"
                 
             // Formater la date pour l'utiliser en string
             let formatter = DateFormatter()

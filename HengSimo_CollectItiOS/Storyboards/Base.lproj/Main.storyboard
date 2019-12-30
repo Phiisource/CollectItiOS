@@ -632,6 +632,9 @@
                                                     <real key="value" value="6"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="sendObtenirLot_button:" destination="2Ct-eb-qRJ" eventType="touchUpInside" id="EdW-hl-S6y"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
