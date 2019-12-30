@@ -12,12 +12,19 @@ import CoreData
 
 class LotsTableViewController: UITableViewController {
     
+    var lots = [Lot]()
+    
     @IBOutlet var lots_tableview: UITableView!
     @IBOutlet weak var switchBO_button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchCurrentUser()
+        fetchLots()
+    }
+    
+    fileprivate func fetchCurrentUser() {
         // Si un utilisateur est connecté
         if let user = Auth.auth().currentUser {
             
@@ -51,28 +58,29 @@ class LotsTableViewController: UITableViewController {
             }
         }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    fileprivate func fetchLots() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Lot")
-        
-        var nbLots = 0
         
         request.returnsObjectsAsFaults = false
         
         do {
             
+            // Récupérer les lots du CoreData
             let results = try context.fetch(request)
-            nbLots = results.count
+            guard let lots = results as? [Lot] else { return }
+            self.lots = lots
+            self.tableView.reloadData()
             
         } catch {
-            
             print(error)
-            
         }
-        
-        return nbLots
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lots.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,38 +90,7 @@ class LotsTableViewController: UITableViewController {
             fatalError("Unexpected Index Path")
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Lot")
-        
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            
-            // Récupérer les lots
-            let results = try context.fetch(request)
-            let oneLot = results[indexPath.row] as! Lot
-            
-            // Placer les données du CoreData Lots dans les cellules de la  table view
-            cell.descriptionlot_label.text = oneLot.descriptionlot
-            cell.coutlot_label.text = "Coût : \(String(oneLot.cout)) points"
-            
-            // Formater la date pour l'utiliser en string
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-            let dateString = formatter.string(from: oneLot.datevalidite!)
-            let datevalidite = formatter.date(from: dateString)
-            formatter.dateFormat = "dd/MM/yyyy"
-            let dateStringFormat = formatter.string(from: datevalidite!)
-
-            cell.datevalidite_label.text = "Valable jusqu'au \(dateStringFormat)"
-            
-        } catch {
-            
-            print(error)
-            
-        }
+        cell.lot = lots[indexPath.row]
 
         return cell
     }

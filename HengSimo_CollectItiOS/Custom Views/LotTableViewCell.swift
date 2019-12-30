@@ -12,6 +12,25 @@ class LotTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "lotCell"
     
+    var lot: Lot? {
+        didSet {
+            guard let lot = lot else { return }
+            descriptionlot_label.text = lot.descriptionlot
+            coutlot_label.text = "Coût : \(String(lot.cout)) points"
+            
+            // Formater la date pour l'utiliser en string
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+            let dateString = formatter.string(from: lot.datevalidite!)
+            let datevalidite = formatter.date(from: dateString)
+            formatter.dateFormat = "dd/MM/yyyy"
+            let dateStringFormat = formatter.string(from: datevalidite!)
+
+            datevalidite_label.text = "Valable jusqu'au \(dateStringFormat)"
+        }
+    }
+    
     @IBOutlet weak var descriptionlot_label: UILabel!
     @IBOutlet weak var coutlot_label: UILabel!
     @IBOutlet weak var datevalidite_label: UILabel!

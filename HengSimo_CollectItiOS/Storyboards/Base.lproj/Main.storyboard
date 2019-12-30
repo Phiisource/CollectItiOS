@@ -371,7 +371,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74e-i7-4c7">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74e-i7-4c7">
                                             <rect key="frame" x="279" y="49" width="115" height="30"/>
                                             <state key="normal" title="Détails"/>
                                         </button>
@@ -623,7 +623,7 @@
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umF-2S-wyI" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umF-2S-wyI" customClass="RoundButton" customModule="HengSimo_CollectItiOS" customModuleProvider="target">
                                             <rect key="frame" x="268" y="95" width="126" height="30"/>
                                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Obtenir ce lot"/>
@@ -731,8 +731,8 @@
         <image name="tri_dechets" width="1000" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WT5-Wt-gW8"/>
+        <segue reference="BIY-kq-soL"/>
         <segue reference="Sgs-os-nOE"/>
-        <segue reference="xoI-wD-olI"/>
+        <segue reference="9ww-4B-2Gu"/>
     </inferredMetricsTieBreakers>
 </document>
