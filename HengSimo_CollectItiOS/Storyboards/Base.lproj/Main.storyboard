@@ -362,33 +362,45 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI0-Cn-9IN">
                                             <rect key="frame" x="20" y="23" width="36" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+/- XXX points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewR-D1-XmF">
-                                            <rect key="frame" x="20" y="58" width="113" height="21"/>
+                                            <rect key="frame" x="281" y="23" width="113" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intitule" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8l-gH-atK">
+                                            <rect key="frame" x="20" y="63.5" width="294" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74e-i7-4c7">
-                                            <rect key="frame" x="279" y="49" width="115" height="30"/>
+                                            <rect key="frame" x="344" y="54" width="50" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="sZE-aF-Btf"/>
+                                            </constraints>
                                             <state key="normal" title="Détails"/>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="74e-i7-4c7" firstAttribute="leading" secondItem="MIa-sS-Pqg" secondAttribute="leading" constant="279" id="G9n-sA-rbC"/>
-                                        <constraint firstAttribute="bottom" secondItem="74e-i7-4c7" secondAttribute="bottom" constant="28" id="LvG-y5-z09"/>
-                                        <constraint firstAttribute="trailing" secondItem="74e-i7-4c7" secondAttribute="trailing" constant="20" id="apy-WB-pID"/>
-                                        <constraint firstItem="ewR-D1-XmF" firstAttribute="top" secondItem="oI0-Cn-9IN" secondAttribute="bottom" constant="14" id="f7P-JB-Tua"/>
-                                        <constraint firstAttribute="bottom" secondItem="ewR-D1-XmF" secondAttribute="bottom" constant="28" id="itb-hi-JmD"/>
-                                        <constraint firstItem="ewR-D1-XmF" firstAttribute="leading" secondItem="MIa-sS-Pqg" secondAttribute="leading" constant="20" id="l7t-aU-48H"/>
+                                        <constraint firstAttribute="trailing" secondItem="74e-i7-4c7" secondAttribute="trailing" constant="20" id="WJ8-2i-Ta6"/>
+                                        <constraint firstItem="K8l-gH-atK" firstAttribute="leading" secondItem="MIa-sS-Pqg" secondAttribute="leading" constant="20" id="Ytj-hF-Wmz"/>
+                                        <constraint firstItem="ewR-D1-XmF" firstAttribute="top" secondItem="MIa-sS-Pqg" secondAttribute="top" constant="23" id="bVF-UJ-2g7"/>
+                                        <constraint firstItem="K8l-gH-atK" firstAttribute="top" secondItem="oI0-Cn-9IN" secondAttribute="bottom" constant="19.5" id="hO3-MF-IBa"/>
+                                        <constraint firstAttribute="bottom" secondItem="74e-i7-4c7" secondAttribute="bottom" constant="23" id="q2x-ux-bAp"/>
+                                        <constraint firstItem="74e-i7-4c7" firstAttribute="leading" secondItem="K8l-gH-atK" secondAttribute="trailing" constant="30" id="rOq-xF-yGj"/>
                                         <constraint firstItem="oI0-Cn-9IN" firstAttribute="top" secondItem="MIa-sS-Pqg" secondAttribute="top" constant="23" id="trj-nN-oKd"/>
+                                        <constraint firstAttribute="trailing" secondItem="ewR-D1-XmF" secondAttribute="trailing" constant="20" id="vGW-hN-SpI"/>
                                         <constraint firstItem="oI0-Cn-9IN" firstAttribute="leading" secondItem="MIa-sS-Pqg" secondAttribute="leading" constant="20" id="xkC-Lr-6Wo"/>
+                                        <constraint firstAttribute="bottom" secondItem="K8l-gH-atK" secondAttribute="bottom" constant="23" id="xp5-Gc-rIt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="datehistorique_label" destination="oI0-Cn-9IN" id="4hz-qu-CRL"/>
+                                    <outlet property="intitulehistorique_label" destination="K8l-gH-atK" id="x3h-z2-Zoe"/>
                                     <outlet property="nbpointshistorique_label" destination="ewR-D1-XmF" id="9zK-F1-S1K"/>
                                 </connections>
                             </tableViewCell>
@@ -426,6 +438,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="historiqueTV" destination="Ste-VR-zTL" id="CKk-Kq-ZIa"/>
                         <outlet property="switchBO_button" destination="lJr-A7-pVW" id="6Ce-wa-2tM"/>
                     </connections>
                 </tableViewController>
@@ -656,6 +669,7 @@
                                     <outlet property="coutlot_label" destination="dUa-O7-fkF" id="VMd-6L-cuV"/>
                                     <outlet property="datevalidite_label" destination="5f2-a7-IIF" id="2rg-rv-YaZ"/>
                                     <outlet property="descriptionlot_label" destination="U5f-Te-bFi" id="OUI-uA-R1v"/>
+                                    <outlet property="obtenirlot_button" destination="umF-2S-wyI" id="ert-bG-26l"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -734,8 +748,8 @@
         <image name="tri_dechets" width="1000" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BIY-kq-soL"/>
+        <segue reference="WT5-Wt-gW8"/>
         <segue reference="Sgs-os-nOE"/>
-        <segue reference="9ww-4B-2Gu"/>
+        <segue reference="xoI-wD-olI"/>
     </inferredMetricsTieBreakers>
 </document>

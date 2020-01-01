@@ -28,12 +28,17 @@ class LotTableViewCell: UITableViewCell {
             let dateStringFormat = formatter.string(from: datevalidite!)
 
             datevalidite_label.text = "Valable jusqu'au \(dateStringFormat)"
+            
+            if lot.datevalidite! < Date() {
+                obtenirlot_button.isEnabled = false
+            }
         }
     }
     
     @IBOutlet weak var descriptionlot_label: UILabel!
     @IBOutlet weak var coutlot_label: UILabel!
     @IBOutlet weak var datevalidite_label: UILabel!
+    @IBOutlet weak var obtenirlot_button: RoundButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

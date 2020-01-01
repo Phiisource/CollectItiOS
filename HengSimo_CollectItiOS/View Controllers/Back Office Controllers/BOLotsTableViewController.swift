@@ -47,7 +47,7 @@ class BOLotsTableViewController: UITableViewController, UISearchResultsUpdating 
             let results = try context.fetch(request)
             guard let lots = results as? [Lot] else { return }
             self.lots = lots
-            self.tableView.reloadData()
+            handleReloadTableView()
             
         } catch {
             print(error)
@@ -87,7 +87,7 @@ class BOLotsTableViewController: UITableViewController, UISearchResultsUpdating 
         super.viewWillAppear(animated)
         
         fetchLots()
-        tableView.reloadData()
+        handleReloadTableView()
     }
 
     @IBAction func switchBackToApp(_ sender: UIButton) {
@@ -101,6 +101,13 @@ class BOLotsTableViewController: UITableViewController, UISearchResultsUpdating 
         let array = (lots as NSArray).filtered(using: searchPredicate)
         filteredLots = array as! [Lot]
 
+        handleReloadTableView()
+    }
+    
+    fileprivate func handleReloadTableView() {
         self.tableView.reloadData()
+        if lots.count == 0 {
+            tableView.setEmptyView(title: "", message: "Aucun lot n'est disponible pour le moment")
+        }
     }
 }

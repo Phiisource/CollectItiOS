@@ -59,7 +59,9 @@ class UserProfileViewController: UIViewController {
                     nbpoints_textfield.text = String(managedObject.nbpoints)
                     
                     // Afficher un message de succès de la suppression des lots
-                    displayAlertController(alertTitle: "Succès", alertMessage: "L'attribution des points a bien été effectuée", actionTitle: "OK")
+                    displayAlertController(alertTitle: "Succès", alertMessage: "L'ajout de points a bien été effectué", actionTitle: "OK")
+                    
+                    createHistoriqueRecord(ajout: Int64(ajouterpoints_textfield.text!)!)
                     
                     ajouterpoints_textfield.text = ""
                 }
@@ -67,7 +69,7 @@ class UserProfileViewController: UIViewController {
             } catch {
                 
                 // Afficher un message d'erreur sur l'échec de la suppression des lots
-                displayAlertController(alertTitle: "Échec", alertMessage: "L'attribution des points à cet utilisateur n'a pas pu s'effectuer", actionTitle: "OK")
+                displayAlertController(alertTitle: "Échec", alertMessage: "L'ajout de points à cet utilisateur n'a pas pu s'effectuer", actionTitle: "OK")
                 
             }
         }
@@ -133,7 +135,7 @@ class UserProfileViewController: UIViewController {
                     nbpoints_textfield.text = String(managedObject.nbpoints)
                     
                     // Afficher un message de succès de la suppression des lots
-                    displayAlertController(alertTitle: "Succès", alertMessage: "L'attribution des points a bien été effectuée", actionTitle: "OK")
+                    displayAlertController(alertTitle: "Succès", alertMessage: "La modification des points a bien été effectuée", actionTitle: "OK")
                     
                     displayModifierNbPoints(bool: false)
                 }
@@ -141,9 +143,33 @@ class UserProfileViewController: UIViewController {
             } catch {
                 
                 // Afficher un message d'erreur sur l'échec de la suppression des lots
-                displayAlertController(alertTitle: "Échec", alertMessage: "L'attribution des points à cet utilisateur n'a pas pu s'effectuer", actionTitle: "OK")
+                displayAlertController(alertTitle: "Échec", alertMessage: "La modification des points de cet utilisateur n'a pas pu s'effectuer", actionTitle: "OK")
                 
             }
+        }
+    }
+    
+    fileprivate func createHistoriqueRecord(ajout: Int64) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newAchat = NSEntityDescription.insertNewObject(forEntityName: "Achat", into: context)
+        
+        newAchat.setValue(Date(), forKey: "dateachat")
+        newAchat.setValue(ajout, forKey: "depense")
+        newAchat.setValue("Ajout de points par un admin", forKey: "descriptionachat")
+        //newAchat.setValue(user?.nbpoints, forKey: "soldepoints")
+        newAchat.setValue(user?.userid, forKey: "userid")
+        
+        do {
+            
+            try context.save()
+            print("***************** AJOUT HISTORIQUE RECORD FAIT *****************")
+            
+        } catch {
+            
+            fatalError("Problème création d'un Achat CoreData (UserProfileBO ajout points)")
+            
         }
     }
     

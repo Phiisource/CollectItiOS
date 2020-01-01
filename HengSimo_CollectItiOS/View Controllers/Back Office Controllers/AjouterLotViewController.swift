@@ -24,7 +24,7 @@ class AjouterLotViewController: UIViewController, UITextFieldDelegate {
         let coutSaisi = Int(coutlot_label.text!)!
         
         // Vérifier si les champs sont remplis
-        if intitulelot_label.text != "" && coutlot_label.text != "" && coutSaisi > 0 {
+        if intitulelot_label.text != "" && coutlot_label.text != "" && coutSaisi > 0 && datelot_picker.date >= Date() {
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -70,6 +70,20 @@ class AjouterLotViewController: UIViewController, UITextFieldDelegate {
     
     // Fonction de suppression des lots disponibles quand le bouton supprimer est cliqué
     @IBAction func sendSupprimerLotsButton(_ sender: RoundButton) {
+        let alert = UIAlertController(title: "Alerte", message: "Confirmer la suppression de tous les lots ?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action) in
+            self.deleteAllLots()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Annuler", style: .default, handler: { _ in
+        NSLog("The \"Cancel\" alert occured.")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func deleteAllLots() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         

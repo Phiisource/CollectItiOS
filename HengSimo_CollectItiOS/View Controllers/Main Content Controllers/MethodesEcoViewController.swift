@@ -16,7 +16,13 @@ class MethodesEcoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        fetchCurrentUser()
+    }
+    
+    fileprivate func fetchCurrentUser() {
         // Si un utilisateur est connecté
         if let user = Auth.auth().currentUser {
             
@@ -41,6 +47,10 @@ class MethodesEcoViewController: UIViewController {
                         
                         switchBO_button.isHidden = false
                         
+                    } else {
+                        
+                        switchBO_button.isHidden = true
+                        
                     }
                 }
             } catch {
@@ -50,7 +60,5 @@ class MethodesEcoViewController: UIViewController {
             }
         }
     }
-
-
 }
 

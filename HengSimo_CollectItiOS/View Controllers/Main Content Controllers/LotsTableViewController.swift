@@ -50,6 +50,10 @@ class LotsTableViewController: UITableViewController {
                         
                         switchBO_button.isHidden = false
                         
+                    } else {
+                        
+                        switchBO_button.isHidden = true
+                        
                     }
                 }
             } catch {
@@ -73,7 +77,7 @@ class LotsTableViewController: UITableViewController {
             let results = try context.fetch(request)
             guard let lots = results as? [Lot] else { return }
             self.lots = lots
-            self.tableView.reloadData()
+            handleReloadTableView()
             
         } catch {
             print(error)
@@ -100,7 +104,8 @@ class LotsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchLots()
-        tableView.reloadData()
+        fetchCurrentUser()
+        handleReloadTableView()
     }
     
     @IBAction func sendObtenirLot_button(_ sender: RoundButton) {
@@ -109,7 +114,7 @@ class LotsTableViewController: UITableViewController {
         let indexPath = tbl.indexPath(for: cell)
         let selectedLot = lots[indexPath!.row] as Lot
         
-        let alert = UIAlertController(title: "Confirmer l'achat de ce lot (\(String(selectedLot.cout)) points) ?", message: selectedLot.descriptionlot, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirmer l'achat de ce lot (\(String(selectedLot.cout)) pt) ?", message: selectedLot.descriptionlot, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Oui", comment: "Default action"), style: .default, handler: { (action) in
             self.buyLot(lot: selectedLot)
@@ -141,7 +146,9 @@ class LotsTableViewController: UITableViewController {
                     managedObject.setValue(managedObject.nbpoints - lot.cout, forKey: "nbpoints")
                     try context.save()
                     
-                    displayAlertController(alertTitle: "Succès", alertMessage: "Le lot a bien été obtenu, votre solde de point est actuellement de \(String(currentUser.nbpoints))", actionTitle: "OK")
+                    createAchat(lot: lot)
+                    
+                    displayAlertController(alertTitle: "Succès", alertMessage: "Le lot a bien été obtenu, votre solde de points est actuellement de \(String(currentUser.nbpoints))", actionTitle: "OK")
                 }
             } catch {
                 
@@ -149,7 +156,31 @@ class LotsTableViewController: UITableViewController {
                 
             }
         } else {
-            displayAlertController(alertTitle: "Requête impossible", alertMessage: "Vous ne disposez pas de suffisamment de point pour obtenir ce lot", actionTitle: "OK")
+            displayAlertController(alertTitle: "Requête impossible", alertMessage: "Vous ne disposez pas de suffisamment de points pour obtenir ce lot", actionTitle: "OK")
+        }
+    }
+    
+    fileprivate func createAchat(lot: Lot) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newAchat = NSEntityDescription.insertNewObject(forEntityName: "Achat", into: context)
+        
+        newAchat.setValue(Date(), forKey: "dateachat")
+        newAchat.setValue(-lot.cout, forKey: "depense")
+        newAchat.setValue("Achat du lot : \(lot.descriptionlot!)", forKey: "descriptionachat")
+        newAchat.setValue(currentUser.nbpoints, forKey: "soldepoints")
+        newAchat.setValue(currentUser.userid, forKey: "userid")
+        
+        do {
+            
+            try context.save()
+            print("***************** AJOUT ACHAT FAIT *****************")
+            
+        } catch {
+            
+            fatalError("Problème création d'un Achat CoreData")
+            
         }
     }
     
@@ -161,5 +192,12 @@ class LotsTableViewController: UITableViewController {
         
         self.present(alertController, animated: true, completion: nil)
         
+    }
+    
+    fileprivate func handleReloadTableView() {
+        self.tableView.reloadData()
+        if lots.count == 0 {
+            tableView.setEmptyView(title: "", message: "Aucun lot n'est disponible pour le moment")
+        }
     }
 }

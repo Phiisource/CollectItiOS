@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Achat" representedClassName="Achat" syncable="YES" codeGenerationType="class">
+        <attribute name="dateachat" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="depense" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="descriptionachat" optional="YES" attributeType="String"/>
+        <attribute name="soldepoints" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userid" attributeType="String"/>
+    </entity>
     <entity name="Lot" representedClassName="Lot" syncable="YES" codeGenerationType="class">
         <attribute name="cout" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="datevalidite" attributeType="Date" defaultDateTimeInterval="915217200" usesScalarValueType="NO"/>
@@ -12,10 +19,10 @@
         <attribute name="nom" attributeType="String" defaultValueString=""/>
         <attribute name="prenom" attributeType="String" defaultValueString=""/>
         <attribute name="userid" attributeType="String" defaultValueString=""/>
-        <relationship name="achat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lot"/>
     </entity>
     <elements>
+        <element name="Achat" positionX="-54" positionY="45" width="128" height="118"/>
         <element name="Lot" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="User" positionX="-54" positionY="9" width="128" height="148"/>
+        <element name="User" positionX="-54" positionY="9" width="128" height="133"/>
     </elements>
 </model>

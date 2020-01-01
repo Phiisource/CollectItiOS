@@ -51,6 +51,10 @@ class AccueilViewController: UIViewController {
                        
                        switchBO_button.isHidden = false
                        
+                    } else {
+                        
+                        switchBO_button.isHidden = true
+                        
                     }
                 }
             } catch {
